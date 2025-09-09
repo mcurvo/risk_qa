@@ -45,3 +45,8 @@ Thumbs.db
 .dockerignore
 docker-compose.override.yml
 .env
+*.db
+*.sqlite3
+*.Zone.Identifier
+data/raw/
+data/processed/
