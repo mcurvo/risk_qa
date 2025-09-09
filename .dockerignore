@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+*.pyc
+*.log
+.env        # keep secrets out of the build context if you pass them at runtime
+data/processed/  # optional: mount at runtime instead

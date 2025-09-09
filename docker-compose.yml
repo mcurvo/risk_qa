@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  riskqa:
+    build: .
+    image: riskqa:latest
+    ports:
+      - "8000:8000"
+    environment:
+      # Prefer env-file locally; these show structure:
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+    env_file:
+      - .env
+    volumes:
+      # Mount processed index so you can rebuild without rebuilding the image
+      - ./data/processed:/app/data/processed
+      # (Optional) mount raw PDFs if you’re iterating on ingestion
+      - ./data/raw:/app/data/raw
